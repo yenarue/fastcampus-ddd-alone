@@ -36,7 +36,7 @@ public class DummyPokemonData {
         return data.get(key);
     }
 
-    private static Pokemon put(final int number, final String name, final int captureRate) {
+    public static Pokemon put(final int number, final String name, final int captureRate) {
         return data.put(NationalPokedexNumber.valueOf(number), new Pokemon(number, name, captureRate));
     }
 }
