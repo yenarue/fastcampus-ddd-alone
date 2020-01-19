@@ -2,6 +2,8 @@ package io.github.wotjd243.pokemon.pokemon.domain;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -15,12 +17,13 @@ class PokemonTest {
     }
 
     @DisplayName("일정 포획률 이상일 때 포켓몬은 잡힌다")
-    @Test
-    void capture() {
+    @ParameterizedTest
+    @ValueSource(ints = {50, 100, 150})
+    void capture(int captureRate) {
         // given
         final Pokemon pokemon = new Pokemon(1, "이상해씨", 45);
         // when
-        final boolean capture = pokemon.capture(50);
+        final boolean capture = pokemon.capture(captureRate);
         // then
         assertThat(capture).isTrue();
     }
