@@ -29,4 +29,9 @@ public class Pokemon {
     public int hashCode() {
         return Objects.hash(number);
     }
+
+    public boolean capture(final int captureRate) {
+        // 캡쳐링을 실제로 진행할 captureRate로 위임한다
+        return this.captureRate.capture(captureRate);
+    }
 }
