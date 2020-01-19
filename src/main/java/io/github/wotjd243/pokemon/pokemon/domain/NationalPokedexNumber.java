@@ -13,7 +13,7 @@ public class NationalPokedexNumber {
         this.number = number;
     }
 
-    public static NationalPokedexNumber valueOf(final int number) {
+    static NationalPokedexNumber valueOf(final int number) {
         return new NationalPokedexNumber(number);
     }
 
