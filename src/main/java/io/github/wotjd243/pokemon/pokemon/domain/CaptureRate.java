@@ -36,7 +36,7 @@ public class CaptureRate {
         return Objects.hash(captureRate);
     }
 
-    public boolean capture(int captureRate) {
+    boolean capture(int captureRate) {
         return this.captureRate < captureRate;
     }
 }
